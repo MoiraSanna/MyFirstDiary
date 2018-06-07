@@ -1,0 +1,4 @@
+- @entries.each do |entry|
+  %h2= link_to entry.title, entry
+  %p= time_ago_in_words(entry.created_at)
+  %p= truncate(entry.content, length:50)
