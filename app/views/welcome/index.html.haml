@@ -1,3 +1,18 @@
-%h1 Congratulations!
-%br
-%h3 Welcome to your Diary :)
+#banner
+  .banner_content
+    %h1 My Diary
+    %p Write down your thoughts and retrieve them anytime. 
+    %button= link_to "Enter", new_user_registration_path
+ 
+#callouts
+  .callout_inner
+    .wrapper
+      .callout
+        %h2 Write down your thoughts
+        %p This is the ideal place for you to write about your life, your dreams and your plans. The diary entries are easy to save and easy to retrieve anytime. They will always available to you only.  
+
+#bottom_cta
+  .wrapper
+    %h2  What are you waiting for
+    %br
+    %button= link_to "Join Now", new_user_registration_path     
