@@ -1,2 +1,6 @@
 %h1= @entry.title
 %p= @entry.content
+
+= link_to "All Entries", entries_path
+= link_to "Ammend it", edit_entry_path(@entry)
+= link_to "Bin It", entry_path(@entry), method: :delete, data: { confirm: "Are you sure?" }

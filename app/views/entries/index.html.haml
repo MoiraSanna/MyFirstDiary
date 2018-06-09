@@ -2,3 +2,5 @@
   %h2= link_to entry.title, entry
   %p= time_ago_in_words(entry.created_at)
   %p= truncate(entry.content, length:50)
+
+= link_to "New Entry", new_entry_path  
