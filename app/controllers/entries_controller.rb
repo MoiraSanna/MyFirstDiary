@@ -2,7 +2,7 @@ class EntriesController < ApplicationController
   before_action :find_entry, only: [:show, :edit, :update, :destroy]
 
   def index
-  	@entries = Entry.all.order("created_at DESC")
+  	@entries = Entry.where(user_id: current_user)
   end
   
   def show
