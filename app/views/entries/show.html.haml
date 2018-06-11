@@ -1,6 +1,8 @@
-%h1= @entry.title
-%p= @entry.content
+.wrapper_with_padding
+  #entry_show
+    %h1.title= @entry.title
+    %p= simple_format(@entry.content)
 
-= link_to "All Entries", entries_path
-= link_to "Ammend it", edit_entry_path(@entry)
-= link_to "Bin It", entry_path(@entry), method: :delete, data: { confirm: "Are you sure?" }
+    .buttons
+      = link_to "Ammend it", edit_entry_path(@entry)
+      = link_to "Bin It", entry_path(@entry), method: :delete, data: { confirm: "Are you sure?" }, class: "button"
