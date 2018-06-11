@@ -1,6 +1,13 @@
-- @entries.each do |entry|
-  %h2= link_to entry.title, entry
-  %p= time_ago_in_words(entry.created_at)
-  %p= truncate(entry.content, length:50)
-
-= link_to "New Entry", new_entry_path  
+.wrapper_with_padding
+  #entries.crearfix
+    - unless @entries.blank?
+      - @entries.each do |entry|
+        %a{ href: (url_for [entry])}
+          .entry
+            %p.title= entry.title
+            %p.date= time_ago_in_words(entry.created_at)
+            %p.content= truncate(entry.content, length:50)
+    - else
+      %h2 Submit your first entry!
+      %p Start writing your diary today
+      %button= link_to "New Entry", new_entry_path
